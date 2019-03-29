@@ -127,9 +127,32 @@ html 块级元素
 
 
 <input> 输入类型
+text
+password
+email
+number
+checkbox
+radio
+submit
+button
+date
+url
+week
+range
+search
+color
+
+输入属性
+value
+readonly
+disabled
+size
+maxlength
+
 
 
 
 
 
 css3 边框圆角
+border-radius 设置边框圆角
