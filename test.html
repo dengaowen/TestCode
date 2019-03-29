@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="editor/css/editormd.min.css" rel="stylesheet" />
+</head>
+<body>
+<div id="test-editor">
+    <textarea style="display: none"></textarea>
+    <script src="editor/jquery.min.js"></script>
+    <script src="editor/editormd.min.js"></script>
+    <script type="text/javascript">
+        var testEditor;
+
+        $(function() {
+            testEditor = editormd("test-editor", {
+                width   : "40%",
+                height  : 640,
+                syncScrolling : "single",
+                path    : "../ajax/editor/lib/"
+            });
+        });
+    </script>
+
+</div>
+
+<div class="test" id="test">hello world!</div>
+
+
+<div id="div1">
+    <p id="p1">hahahah</p>
+    <p id="p2">hello</p>
+</div>
+<script>
+    para = document.createElement("p");//createElement 创建一个新元素
+    node = document.createTextNode("This is new.");//createTextNode 创建文本节点
+    para.appendChild(node);//appendChild 追加子元素
+
+    element = document.getElementById("div1");//getElementById 通过id获取元素
+    element.appendChild(para);
+</script>
+
+
+
+<button type="button" onclick="loadL()">test</button>
+<script>
+    function loadL() {
+        var xmlHttp;
+        if (window.XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        } else {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlHttp.onreadystatechange = function(){
+            if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                document.getElementById("test").innerHTML = xmlHttp.responseText;
+            }
+        }
+
+        xmlHttp.open("GET","test.php",true);
+        xmlHttp.send();
+    }
+</script>
+</body>
+</html>
