@@ -1,0 +1,13 @@
+input {
+    display: block;
+    border-radius: 4px;
+    padding: 6px 12px;
+    height: 20px;
+    width: 50%;
+    margin: 0 auto 10px;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    border-radius:4px;
+}

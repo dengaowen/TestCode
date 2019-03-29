@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="editor/css/editormd.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<form action="test.php" method="post">
+    <label>
+        <input type="text" name="title" placeholder="hello" id="title">
+    </label>
+    <script>
+        var test = document.getElementById("title").getAttribute("placeholder");
+        alert(test);
+        var h = document.getElementById("title");
+        h.value = "hello world";
+        //document.getElementById("title").setAttribute("value","hello world");
+    </script>
+
+    <div id="test-editor">
+        <textarea style="display: none"></textarea>
+    </div>
+</form>
+
+
+<script src="editor/jquery.min.js"></script>
+<script src="editor/editormd.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+    $(function() {
+        testEditor = editormd("test-editor", {
+            width   : "40%",
+            height  : 640,
+            syncScrolling : "single",
+            path    : "../ajax/editor/lib/",
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "./php/upload.php",
+            onload : function() {
+                console.log('onload', this);
+            }
+        });
+    });
+</script>
+</body>
+</html>

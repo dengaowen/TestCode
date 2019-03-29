@@ -6,27 +6,37 @@
     <link href="editor/css/editormd.min.css" rel="stylesheet" />
 </head>
 <body>
-<div id="test-editor">
-    <textarea style="display: none"></textarea>
+<form action="test.php" method="post">
+    <label>
+        <input type="text" name="title" value="hello">
+    </label>
+    <div id="test-editor">
+        <textarea style="display: none"></textarea>
+    </div>
+</form>
     <script src="editor/jquery.min.js"></script>
     <script src="editor/editormd.min.js"></script>
     <script type="text/javascript">
         var testEditor;
-
         $(function() {
             testEditor = editormd("test-editor", {
                 width   : "40%",
                 height  : 640,
                 syncScrolling : "single",
-                path    : "../ajax/editor/lib/"
+                path    : "../ajax/editor/lib/",
+                imageUpload : true,
+                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL : "./php/upload.php",
+                onload : function() {
+                    console.log('onload', this);
+                }
             });
         });
     </script>
 
-</div>
+
 
 <div class="test" id="test">hello world!</div>
-
 
 <div id="div1">
     <p id="p1">hahahah</p>
@@ -40,7 +50,6 @@
     element = document.getElementById("div1");//getElementById 通过id获取元素
     element.appendChild(para);
 </script>
-
 
 
 <button type="button" onclick="loadL()">test</button>

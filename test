@@ -95,7 +95,11 @@ replaceChild() 替换元素
 
 
 
+childNodes {
+array(hello world)
+foreach(hello world as value)
 
+}
 
 输入array
 implode 将一个一维数组的值转化为字符串，第一个参数为分割符
@@ -105,3 +109,27 @@ implode 将一个一维数组的值转化为字符串，第一个参数为分割
 explode 使用一个字符串分割另一个字符串，第一个参数为分割符
 如果 delimiter 为空字符串（""），explode() 将返回 FALSE
 输出array
+
+html 块级元素
+<h> <p> <ul> <table>
+在浏览器显示时，通常会以新行来开始（和结束）。
+
+内联元素
+<b> <td> <a> <img>
+在显示时不会以新行开始
+
+<div>元素
+是块级元素，可用于组合其他HTML元素的容器。
+
+<span>元素
+内联元素，可用作文本的容器
+用来组合文档中的行内元素。
+
+
+<input> 输入类型
+
+
+
+
+
+css3 边框圆角
