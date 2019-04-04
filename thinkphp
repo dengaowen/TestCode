@@ -1,0 +1,5 @@
+thinkphp 启动
+
+请求入口 public/index.php
+框架启动 thinkphp/start.php
+应用启动 thinkphp/library/App.php
